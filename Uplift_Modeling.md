@@ -1,5 +1,5 @@
 # Introduction
-This homework is about "uplift modeling" (see the [wiki page](https://en.wikipedia.org/wiki/Uplift_modelling) for an introduction) which is basically a combination of machine learning + causual inference.  I lecture about this in-depth on April 24th.
+This homework is about "uplift modeling" (see the [wiki page](https://en.wikipedia.org/wiki/Uplift_modelling) for an introduction) which is basically a combination of machine learning + causual inference.
 
 ## Data
 The data for this assignment is a sample of data from the [Criteo Uplift Prediction Dataset](https://ailab.criteo.com/criteo-uplift-prediction-dataset/).  You can read a more detailed description of the data there, and there is also a [research paper](https://drive.google.com/file/d/1JTKuzdl7xxQuLuwqfmZBsvhMarxCzHh7/view?usp=sharing) about uplift modeling using this dataset.  Note that the description says there are 11 features, but our dataset actually has 12 (I think the documentation is out of date)
