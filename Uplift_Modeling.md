@@ -2,14 +2,14 @@
 This homework is about "uplift modeling" (see the [wiki page](https://en.wikipedia.org/wiki/Uplift_modelling) for an introduction) which is basically a combination of machine learning + causual inference.
 
 ## Data
-The data for this assignment is a sample of data from the [Criteo Uplift Prediction Dataset](https://ailab.criteo.com/criteo-uplift-prediction-dataset/).  You can read a more detailed description of the data there, and there is also a [research paper](https://drive.google.com/file/d/1JTKuzdl7xxQuLuwqfmZBsvhMarxCzHh7/view?usp=sharing) about uplift modeling using this dataset.  Note that the description says there are 11 features, but our dataset actually has 12 (I think the documentation is out of date)
+I am using sample of data from the [Criteo Uplift Prediction Dataset](https://ailab.criteo.com/criteo-uplift-prediction-dataset/).  You can read a more detailed description of the data there, and there is also a [research paper](https://drive.google.com/file/d/1JTKuzdl7xxQuLuwqfmZBsvhMarxCzHh7/view?usp=sharing) about uplift modeling using this dataset.  Note that the description says there are 11 features, but our dataset actually has 12 (I think the documentation is out of date)
 
-For this assignment, there are two datasets: one for training/validation, and a separate one for testing. Each row in the data represents a different user. The training data has the following fields:
+There are two datasets: one for training/validation, and a separate one for testing. Each row in the data represents a different user. The training data has the following fields:
 * 12 features - all continuous, named f0, f1, f2, ..., f11
 * an indicator as to whether the user received treatment (treatment = 1, control = 0).  "Treatment" means the user was exposed to a specific advertising campaign.
 * an indicator as to whether the user performed a website visit (vist = 1, no visit = 0)
 
-The test data only has the 12 continuous features, it does not have the indicators for treatment or website visit.  This data is only used in question #4!
+The test data only has the 12 continuous features, it does not have the indicators for treatment or website visit.
 
 
 
@@ -35,12 +35,14 @@ from sklearn import preprocessing
 
 ## Hints and tips
 
-* There is NO data cleaning or outlier analysis necessary for this dataset.  Of course, it is always good practice to at least do a "describe()" on the data to verify this for yourself.
-* I would like you to use the [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) module from scikit learn.  The purpose of this assignment is to understand the concepts and principles about uplift modeling - it is not meant to be an exercise is choosing a "best" classifier.  The LogisticRegression model performs well for this data, and runs reasonably quickly.  You should not need to change any of the defaults and you don't need to spend time tuning this model.  That is not the purpose of this homework.
-* The code needed to to train and evaluate a logistic regression model is shown in the class activity on April 24th.  This includes feature scaling as well.  Note that it is best practice to use the same scaling for all of your models / predictions!  THIS IS VERY IMPORTANT - if you have any questions, please ask!
+* There is NO data cleaning or outlier analysis necessary for this dataset.
 
-## Question #1
+* I used the [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) module from scikit learn.
 
+* The code needed to to train and evaluate a logistic regression model is shown in the class activity on April 24th.  This includes feature scaling as well.
+
+*Note:* It is best practice to use the same scaling for all of your models / predictions
+  
 In any randomized experiment, it is good practice to ensure that the features are independent of the assignment to treatment or control.  One way to do this is to build a model using the treatment indicator as the response variable, and then measure the predictive power of this model.  If there is no predictive power (i.e. the model predicts no better/worse than a random prediction) then this is strong evidence that features are independent of assignment.
 
 
